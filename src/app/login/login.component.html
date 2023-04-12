@@ -1,2 +1,18 @@
-
+<div>
+    <h1>Iniciar sesión</h1>
+    <form>
+      <label>
+        Nombre de usuario:
+        <input type="text" [(ngModel)]="username" name="username" required>
+      </label>
+      <br>
+      <label>
+        Contraseña:
+        <input type="password" [(ngModel)]="password" name="password" required>
+      </label>
+      <br>
+      <button type="button" (click)="login()">Iniciar sesión</button>
+    </form>
+  </div>
+  
 
