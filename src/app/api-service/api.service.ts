@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  private baseUrl = 'http://localhost:3000/api';
+  
 
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string) {
-    return this.http.post(`${this.baseUrl}/login`, { username, password });
+    return this.http.post(`${environment.apiUrl}/login`, { username, password });
   }
 
-  getPost() {
-    return this.http.get(`${this.baseUrl}/post`);
-  }
+ 
 
 
 }
