@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api-service/api.service';
 
 @Component({
@@ -6,13 +6,16 @@ import { ApiService } from '../api-service/api.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   
   username = '';
   password = '';
 
   constructor(private api: ApiService) { }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   login() {
     this.api.login(this.username, this.password).subscribe(response => {
