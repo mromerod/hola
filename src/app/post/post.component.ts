@@ -9,14 +9,14 @@ import { PostService } from '../api-service/post-service.service';
 })
 export class PostComponent implements OnInit {
 
-  posts: any = {};
+  posts: any = [];
 
   constructor(public post: PostService) { }
 
   ngOnInit() {
     this.post.getPosts().subscribe(
       (response: any) => { // Modificar el tipo del argumento a Object
-        this.posts = response['posts'];
+        this.posts = response['/posts'];
       },
       (error) => {
         console.log(error);
