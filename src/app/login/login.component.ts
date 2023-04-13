@@ -18,7 +18,7 @@ export class LoginComponent {
   login() {
     this.api.login(this.username, this.password).subscribe(response => {
       console.log(response); 
-      this.router.navigateByUrl(`${environment.apiUrl}/posts`);
+      this.router.navigateByUrl(`/posts`);
     }, error => {
       console.log(error);
     });

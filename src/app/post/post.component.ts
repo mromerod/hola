@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api-service/api.service';
-import { PostService } from '../api-service/post-service.service';
 
+import { PostService } from '../api-service/post-service.service';
+import { Post } from '../post/postclass';
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
@@ -9,19 +9,27 @@ import { PostService } from '../api-service/post-service.service';
 })
 export class PostComponent implements OnInit {
 
-  posts: any = [];
+  posts: Post[] = [];
 
-  constructor(public post: PostService) { }
+
+  constructor(public postService: PostService) { }
 
   ngOnInit() {
-    this.post.getPosts().subscribe(
-      (response: any) => { // Modificar el tipo del argumento a Object
-        this.posts = response['/posts'];
+    this.postService.getPosts().subscribe({
+      next: (response: Post[]) => {
+        this.posts = response;
+        console.log('los posts',this.posts);
       },
-      (error) => {
+      error: (error) => {
         console.log(error);
       }
-    );
+    });
   }
+  
 
 }
+
+
+
+
+

@@ -5,9 +5,9 @@ import { PostComponent } from './post/post.component';
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'post', component: PostComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  
+  { path: 'posts/all', component: PostComponent },
+ 
 ];
 
 @NgModule({
