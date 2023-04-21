@@ -1,7 +1,8 @@
 export class Post {
-    id: number = 0;
+    id: any;
     text: string = '';
     imagePost: string = '';
     user: any;
+    fechaPublicacion:  string = ''; 
   }
   

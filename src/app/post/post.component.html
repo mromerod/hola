@@ -1,19 +1,56 @@
-<div>
-  <h1>Publicaciones</h1>
-  <ul>
-    <li *ngFor="let post of posts">
-      {{post.text}} {{post.user}}
-      <div class="btn-group">
-        <button type="button" class="btn btn-default">
-          <i class="fa fa-thumbs-up"></i> Me gusta
-        </button>
-        <button type="button" class="btn btn-default">
-          <i class="fa fa-comment"></i> Comentar
-        </button>
-        <button type="button" class="btn btn-default">
-          <i class="fa fa-share"></i> Compartir
-        </button>
-      </div>
-    </li>
-  </ul>
-</div>
+
+<div style="margin-left: 200px; margin-top: 200px;">
+  <table>
+  <td>
+  <div class="talk-bubble tri-right round border right-top">
+    <div class="talktext">
+      <p><li *ngFor="let post of posts | slice:0:1 ">
+        {{post.text}} {{post.id}}
+  </p>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default">
+      <i class="fa fa-thumbs-up"></i> Me gusta
+    </button>
+    <button type="button" class="btn btn-default">
+      <i class="fa fa-comment"></i> Comentar
+    </button>
+    <button type="button" class="btn btn-default">
+      <i class="fa fa-share"></i> Compartir
+    </button>
+</div></div></div></td>
+<div style="margin-left: 200px; margin-top: 200px;"></div>
+<td>
+<div class="talk-bubble tri-right border round btm-left-in">
+    <div class="talktext"> <p><li *ngFor="let post of posts | slice:1:2 ">
+        {{post.text}} {{post.id}}
+  </p>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default">
+              <i class="fa fa-thumbs-up"></i> Me gusta
+            </button>
+            <button type="button" class="btn btn-default">
+              <i class="fa fa-comment"></i> Comentar
+            </button>
+            <button type="button" class="btn btn-default">
+              <i class="fa fa-share"></i> Compartir
+            </button>
+    </div></div></div></td>
+    <div style="margin-left: 200px;">
+   <td><div class="talk-bubble tri-right border btm-right-in">
+        <div class="talktext">
+            <p><li *ngFor="let post of posts | slice:2:3">
+                {{post.text}} {{post.id}}
+          </p>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default">
+                      <i class="fa fa-thumbs-up"></i> Me gusta
+                    </button>
+                    <button type="button" class="btn btn-default">
+                      <i class="fa fa-comment"></i> Comentar
+                    </button>
+                    <button type="button" class="btn btn-default">
+                      <i class="fa fa-share"></i> Compartir
+                    </button>
+            </div>
+        </div>
+      </div></td></div>
